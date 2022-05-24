@@ -2,7 +2,7 @@ const env = process.env
 
 export const API_SECRET = env.API_SECRET 
     ? env.API_SECRET 
-    : "YXV0aC1hcGktc2VjcmV0LWRldi0xMjM0NTY=";
+    : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
 
 export const DB_HOST = env.DB_HOST ? env.DB_HOST : "localhost";
 export const DB_NAME = env.DB_NAME ? env.DB_NAME : "auth-db";

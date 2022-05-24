@@ -53,7 +53,6 @@ class OrderService {
     async updateOrder(orderMessage) {
         try {
             const order = JSON.parse(orderMessage);
-            console.log(order);
             if(order.salesId && order.status){
                 let existingOrder = await OrderRepository.findById(order.salesId);
                 if(existingOrder && order.status !== existingOrder.status) {
@@ -125,7 +124,7 @@ class OrderService {
 
     }
 
-    async findAll() {
+    async findAll(req) {
         try {
             const { transactionid, serviceid } = req.headers;
             console.info(`Request to GET all orders | [transactionID: ${transactionid} | serviceID: ${serviceid}]`

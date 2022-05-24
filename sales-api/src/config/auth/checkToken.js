@@ -23,12 +23,10 @@ export default async (req, res, next) => {
     } else {
       accessToken = authorization;
     }
-    console.log(API_SECRET);
     const decoded = await promisify(jwt.verify)(
       accessToken,
       API_SECRET
       );
-      console.log(accessToken);
     req.authUser = decoded.authUser;
     return next();
   } catch (err) {

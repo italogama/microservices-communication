@@ -23,8 +23,6 @@ export default async (req, res, next) => {
     } else {
       accessToken = authorization;
     }
-    console.log('Token ' + accessToken);
-    console.log('Secret ' + secrets.API_SECRET);
     const decoded = await promisify(jwt.verify)(
       accessToken,
       secrets.API_SECRET
@@ -32,7 +30,6 @@ export default async (req, res, next) => {
     req.authUser = decoded.authUser;
     return next();
   } catch (err) {
-    console.log(err);
     const status = err.status ? err.status : httpStatus.INTERNAL_SERVER_ERROR;
     return res.status(status).json({ message: err.message });
   }
