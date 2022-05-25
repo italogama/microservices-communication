@@ -4,9 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
-    "startDev": "nodemon app.js"
-	"start": "node app.js"
+    "startDev": "nodemon app.js",
+	  "start": "node app.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
